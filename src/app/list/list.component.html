@@ -1,0 +1,13 @@
+<div *ngIf="!hasCustomTemplate">
+  <app-list-entry
+    [person]="person"
+    *ngFor="let person of persons"
+  ></app-list-entry>
+</div>
+
+<div *ngIf="hasCustomTemplate">
+  <ng-template ngFor [ngForOf]="persons" [ngForTemplate]="customEntryTemplate!">
+  </ng-template>
+</div>
+
+<ng-content></ng-content>
