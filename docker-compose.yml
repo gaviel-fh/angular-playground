@@ -1,0 +1,12 @@
+version: "3"
+services:
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: ap-client
+    volumes:
+      - /usr/app/node_modules
+      - .:/usr/app
+    ports:
+      - "4200:4200"
